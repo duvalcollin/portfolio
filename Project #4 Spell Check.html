@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>Project 4: Spell Check</TITLE>
+<META charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<META name="author" content="Collin Duval" />
+<SCRIPT src="../wordlist.js"></SCRIPT> 
+<SCRIPT type="text/javascript">
+function checkSpelling() {
+	var fullText = document.getElementById("paragraph").value.toUpperCase();
+	var words = fullText.split(' ');
+	// Linear method O(n) TODO: Change to logarithmic
+	var wrongWordList = [];
+		for (let i=0;i<words.length;i++) {
+		let wordFound = false;
+		let currentWord = words[i];
+		if (currentWord.length == 0) continue;
+		for (let w=0;w<wordlist.length;w++) {
+	var punctuations = [".", ",", ":", "!", "?"];
+		for (let p=0;p<punctuations.length;p++) {
+			currentWord = currentWord.replace(punctuations[p],"");
+		}
+	var numbers = ["0","1", "2", "3", "4", "5","6","7","8","9"];
+		for (let n=0;n<numbers.length;n++) {
+			currentWord = currentWord.replace(numbers[n],"");
+		}
+			if (wordlist[w]==currentWord.toUpperCase()) {
+			wordFound = true;
+			break;
+		}
+	}// For each word in the word list (lexicon)
+	if (!wordFound) {
+	wrongWordList.push(words[i]);
+	}
+	}
+	wrongWordString = "";
+
+	for(let ww=0;ww<wrongWordList.length;ww++) {
+		wrongWordString += " [ "+wrongWordList[ww]+" ]";
+	}
+	document.getElementById("results").innerHTML =
+		"You typed "+words.length+" words.<BR />"+
+		wrongWordList.length+" of them were wrong. <BR />"+
+		wrongWordString;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV id="results"></DIV>
+Enter text in the box below, and click the button to check the spelling.<BR />
+<TEXTAREA id="paragraph" rows="5" cols="40"></TEXTAREA>
+<BUTTON onclick="checkSpelling();">Check Spelling</BUTTON>
+</BODY>
+</HTML>
