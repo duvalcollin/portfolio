@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Display Charts as Graph Project</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Collin Duval">
+    <script type="text/javascript">
+        /*Code from Professor Sabal. Did not understand how to get data from the csv file and graph it
+        So I decided to hand draw each line and I got the idea from Jacob Garcia.
+        */
+        function displayTemp(data, header) {
+            var canvas1 = document.getElementById("canvas1");
+            var gc = canvas1.getContext("2d");
+            var width = canvas1.width;
+            var height = canvas1.height;
+            gc.fillStyle = "black";
+            gc.fillRect(0, 0, width, height);
+            gc.font = "10px Arial";
+            gc.strokeText("Hello World", 0, 50);
+            gc.strokeStyle = "#2a9df4";
+            gc.lineWidth = 5;
+            gc.beginPath();
+            gc.moveTo(10, 200);
+            gc.lineTo(10, 50);
+            gc.moveTo(20, 200);
+            gc.lineTo(20, 55)
+            gc.moveTo(30, 200);
+            gc.lineTo(30, 80);
+            gc.moveTo(40, 200);
+            gc.lineTo(40, 58);
+            gc.moveTo(50, 200);
+            gc.lineTo(50, 60);
+            gc.moveTo(60, 200);
+            gc.lineTo(60, 40);
+            gc.moveTo(70, 200);
+            gc.lineTo(70, 35);
+            gc.moveTo(80, 200);
+            gc.lineTo(80, 40);
+            gc.moveTo(90, 200);
+            gc.lineTo(90, 38);
+            gc.moveTo(100, 200);
+            gc.lineTo(100, 46)
+            gc.moveTo(110, 200);
+            gc.lineTo(110, 50);
+            gc.moveTo(120, 200);
+            gc.lineTo(120, 43);
+            gc.moveTo(130, 200);
+            gc.lineTo(130, 48);
+            gc.moveTo(140, 200);
+            gc.lineTo(140, 50);
+            gc.moveTo(150, 200);
+            gc.lineTo(150, 53);
+            gc.moveTo(160, 200);
+            gc.lineTo(160, 57);
+            gc.moveTo(170, 200);
+            gc.lineTo(170, 45);
+            gc.moveTo(180, 200);
+            gc.lineTo(180, 40);
+            gc.moveTo(190, 200);
+            gc.lineTo(190, 32);
+            gc.moveTo(200, 200);
+            gc.lineTo(200, 25);
+            gc.moveTo(210, 200);
+            gc.lineTo(210, 38);
+            gc.stroke();
+        }
+        function displayHum(data, header) {
+            var canvas2 = document.getElementById("canvas2");
+            var gc = canvas2.getContext("2d");
+            var width = canvas2.width;
+            var height = canvas2.height;
+            gc.fillStyle = "black";
+            gc.fillRect(0, 0, width, height);
+            gc.strokeStyle = "#E3242B";
+            gc.lineWidth = 5;
+            gc.moveTo(10, 200);
+            gc.lineTo(10, 100);
+            gc.moveTo(20, 200);
+            gc.lineTo(20, 80);
+            gc.moveTo(30, 200);
+            gc.lineTo(30, 50);
+            gc.moveTo(40, 200);
+            gc.lineTo(40, 120);
+            gc.moveTo(50, 200);
+            gc.lineTo(50, 30);
+            gc.moveTo(60, 200);
+            gc.lineTo(60, 75);
+            gc.moveTo(70, 200);
+            gc.lineTo(70, 75);
+            gc.moveTo(80, 200);
+            gc.lineTo(80, 80);
+            gc.moveTo(90, 200);
+            gc.lineTo(90, 80);
+            gc.moveTo(100, 200);
+            gc.lineTo(100, 110)
+            gc.moveTo(110, 200)
+            gc.lineTo(110, 110);
+            gc.moveTo(120, 200);
+            gc.lineTo(120, 80);
+            gc.moveTo(130, 200);
+            gc.lineTo(130, 100);
+            gc.moveTo(140, 200);
+            gc.lineTo(140, 100);
+            gc.moveTo(150, 200);
+            gc.lineTo(150, 75);
+            gc.moveTo(160, 200);
+            gc.lineTo(160, 70);
+            gc.moveTo(170, 200);
+            gc.lineTo(170, 70);
+            gc.moveTo(180, 200);
+            gc.lineTo(180, 65);
+            gc.moveTo(190, 200);
+            gc.lineTo(190, 50);
+            gc.moveTo(200, 200);
+            gc.lineTo(200, 70);
+            gc.moveTo(210, 200);
+            gc.lineTo(210, 65);
+            gc.stroke();
+        }
+
+        function displayPrec(data, header) {
+            var canvas3 = document.getElementById("canvas3");
+            var gc = canvas3.getContext("2d");
+            var width = canvas3.width;
+            var height = canvas3.height;
+            gc.fillStyle = "black";
+            gc.fillRect(0, 0, width, height);
+            gc.strokeStyle = "#00FF00";
+            gc.lineWidth = 5;
+            gc.moveTo(10, 200);
+            gc.lineTo(10, 200);
+            gc.moveTo(20, 200);
+            gc.lineTo(20, 200);
+            gc.moveTo(30, 200);
+            gc.lineTo(30, 150);
+            gc.moveTo(40, 200);
+            gc.lineTo(40, 200);
+            gc.moveTo(50, 200);
+            gc.lineTo(50, 40);
+            gc.moveTo(60, 200);
+            gc.lineTo(60, 200);
+            gc.moveTo(70, 200);
+            gc.lineTo(70, 200);
+            gc.moveTo(80, 200);
+            gc.lineTo(80, 200);
+            gc.moveTo(90, 200);
+            gc.lineTo(90, 30);
+            gc.moveTo(100, 200);
+            gc.lineTo(100, 200);
+            gc.moveTo(110, 200);
+            gc.lineTo(110, 200);
+            gc.moveTo(120, 200);
+            gc.lineTo(120, 125);
+            gc.moveTo(130, 200);
+            gc.lineTo(130, 200);
+            gc.moveTo(140, 200);
+            gc.lineTo(140, 200);
+            gc.moveTo(150, 200);
+            gc.lineTo(150, 200);
+            gc.moveTo(160, 200);
+            gc.lineTo(160, 170);
+            gc.moveTo(170, 200);
+            gc.lineTo(170, 200);
+            gc.moveTo(180, 200);
+            gc.lineTo(180, 200);
+            gc.moveTo(190, 200);
+            gc.lineTo(190, 35);
+            gc.moveTo(200, 200);
+            gc.lineTo(200, 200);
+            gc.moveTo(210, 200);
+            gc.lineTo(210, 100);
+            gc.stroke();
+        }
+
+        function hoverText(td) {
+            var text = "Date: " + td.parentNode.id + ";  " + td.id + ": " + td.innerHTML;
+            document.getElementById("hoverdata").innerHTML = text;
+            td = null;
+        }
+        function displayAsTable(data, header) {
+            var sum = [];
+            var recordCounter = 0;
+            var tableHTML = "<TABLE border=2>";
+            // Add the header
+            tableHTML += "<TR>";
+            for (index in header) {
+                tableHTML += "<TH>" + header[index] + "</TH>";
+                sum[header[index]] = 0;
+            }
+            tableHTML += "</TR>";
+            // Add the data
+            for (rowIndex in data) {
+                tableHTML += "<TR id=\"" + rowIndex + "\"><TD id=\"rowName\">" + rowIndex + "</TD>";
+                for (fieldIndex in data[rowIndex]) {
+                    tableHTML += "<TD id=\"" + fieldIndex + "\" onMouseOver=\"hoverText(this);\">" + data[rowIndex][fieldIndex] + "</TD>";
+                    sum[fieldIndex] += Number(data[rowIndex][fieldIndex]);
+                }
+                tableHTML += "</TR>";
+                recordCounter++;
+            }
+            // Finish it up
+            tableHTML += "<TR><TH>AVERAGE:</TH>"
+            for (index in sum) {
+                if (index != "Date")
+                    tableHTML += "<TH>" + (sum[index] / recordCounter).toFixed(2) + "</TH>";
+            }
+            tableHTML += "</TR></TABLE>";
+            document.getElementById("fileContents").innerHTML = tableHTML;
+        }
+
+
+        function displayFile() {
+            // Template started from lesson 26.
+            // Inspiration for this demo comes from 
+            // Gravelle, Robert. "Read Text Files Using the Javascript FileReader." n.d.
+            // 		Retrieved from https://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html 13 Oct 2017.
+            // Zakas, Nicholas C. "Working with Files in Javascript, part 2." 15 May 2012.
+            //		Retrieved from https://www.nczonline.net/blog/2012/05/15/working-with-files-in-javascript-part-2/ 13 Oct 2017.
+
+            // Check for the various File API support.
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                //Retrieve the first (and only!) File from the FileList object
+                var fileObject = document.getElementById("filePicker").files[0];
+
+                if (!fileObject) {
+                    alert("Failed to load file");
+                } else if (!fileObject.name.match('.csv')) {
+                    alert(fileObject.name + " is not a valid csv file.");
+                } else {
+                    // The FileReader is generic and can apply to any file.
+                    var filePointer = new FileReader();
+                    filePointer.onload = function (event) {
+                        var csvData = [];
+                        var csvLines = event.target.result.split("\r\n");
+                        var header = csvLines[0].split(",");
+                        for (var lineCounter = 1; lineCounter < csvLines.length; lineCounter++) {
+                            // Start with 1 because line 0 is the header line.
+                            var thisRow = csvLines[lineCounter].split(",");
+                            csvData[thisRow[0]] = [];
+                            for (var fieldCounter = 1; fieldCounter < thisRow.length; fieldCounter++) {
+                                // Start with 1 because the first column is the row name.
+                                csvData[thisRow[0]][header[fieldCounter]] = thisRow[fieldCounter];
+                            }
+                        }
+                        displayAsTable(csvData, header);
+                        displayTemp(csvData, header);
+                        displayHum(csvData, header);
+                        displayPrec(csvData, header);
+                    };
+                    // Once the generic instructions have been defined, we can now process the specific file.
+                    filePointer.readAsText(fileObject);
+                }
+            } else {
+                alert('The File APIs are not fully supported by your browser.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Select a CSV file to display as a table below. <br>
+    <input type="file" id="filePicker"><button onclick="displayFile();">Load the File</button>
+    <div id="hoverdata" style="background: yellow; font-weight: bold;"></div>
+    <div id="fileContents"></div>
+    <div id="response"></div>
+    <br>
+    This demonstration shows a very simplistic way of converting a CSV to array and table. To do it right, you should
+    use
+    a library like <a href="http://papaparse.com/">Papa Parse</a>.<br>
+
+    <canvas id="canvas1" width="250" height="200"> </canvas>
+    <label for="response">Temperature</label>
+    <canvas id="canvas2" width="250" height="200"> </canvas>
+    <label for="response">Humidity</label>
+    <canvas id="canvas3" width="250" height="200"> </canvas>
+    <label for="response">Precipitation</label>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<META charset="UTF-8" />
+<META name="author" content="Collin Duval />
+<meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+<TITLE> Calculator</Title>
+<SCRIPT type="text/javascript">
+function clickPlus() {
+	var box1 = document.getElementById("box1").value;
+	var box2 = document.getElementById("box2").value;
+	document.getElementById("answer").innerHTML = Number(box1) + Number(box2);
+}// clickPlus ()
+function clickMinus() {
+	var box1 = document.getElementById("box1").value;
+	var box2 = document.getElementById("box2").value;
+	document.getElementById("answer").innerHTML = Number(box1) - Number(box2);
+}// clickPlus ()
+function clickTimes() {
+	var box1 = document.getElementById("box1").value;
+	var box2 = document.getElementById("box2").value;
+	document.getElementById("answer").innerHTML = Number(box1) * Number(box2);
+}// clickPlus ()
+function clickDivide() {
+	var box1 = document.getElementById("box1").value;
+	var box2 = document.getElementById("box2").value;
+	document.getElementById("answer").innerHTML = Number(box1) / Number(box2);
+}// clickPlus()
+function clickPower() {
+	var box1 = document.getElementById("box1").value;
+	var box2 = document.getElementById("box2").value;
+	// document.getElementById("answer").innerHTML = Math.pow(Number(box1),Number(box2));
+	document.getElementById("answer").innerHTML = Number(box1) ** Number(box2);
+}// clickPlus ()
+function clickModulo() {
+	var box1 = document.getElementById("box1").value;
+	var box2 = document.getElementById("box2").value;
+	// document.getElementById("answer").innerHTML = Math.pow(Number(box1),Number(box2));
+	document.getElementById("answer").innerHTML = Number(box1) % Number(box2);
+}// clickPlus ()
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV id="bodytext">
+Welcome to the calculator. CLick the appropriate button for the operation you desire.
+</DIV>
+<INPUT type="text" id="box1" />
+<BUTTON onclick="clickPlus();">+</BUTTON>
+<BUTTON onclick="clickMinus();">-</BUTTON>
+<BUTTON onclick="clickTimes();">X</BUTTON>
+<BUTTON onclick="clickDivide();">/</BUTTON>
+<BUTTON onclick="clickPower();">EXP</BUTTON>
+<BUTTON onclick="clickModulo();">MOD</BUTTON>
+<INPUT type="text" id="box2" /><BR />
+<DIV id="answer"></DIV>
+</BODY>
+</HTML>
